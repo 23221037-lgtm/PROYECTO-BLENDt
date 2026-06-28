@@ -1,6 +1,6 @@
 import { Play } from 'lucide-react'
 
-function SongCard({ song }) {
+function SongCard({ song, onSelect }) {
   const { titulo, artista, imagen } = song
 
   return (
@@ -13,8 +13,9 @@ function SongCard({ song }) {
         />
 
         <button
+          onClick={() => onSelect(song)}
           className="absolute bottom-3 right-3 rounded-full bg-green-400 p-3 text-black opacity-0 shadow-lg transition group-hover:opacity-100"
-          title={`Reproducir ${titulo}`}
+          title={`Seleccionar ${titulo}`}
         >
           <Play size={22} fill="currentColor" />
         </button>
