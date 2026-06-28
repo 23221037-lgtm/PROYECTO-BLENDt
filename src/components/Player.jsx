@@ -4,10 +4,10 @@ function Player({ song }) {
       <img
         src={song.imagen}
         alt={`Portada de ${song.titulo}`}
-        className="h-16 w-16 rounded object-cover"
+        className="hidden h-14 w-14 rounded object-cover sm:block"
       />
 
-      <div className="min-w-0 w-40">
+      <div className="hidden w-40 min-w-0 sm:block">
         <h3 className="truncate font-semibold">{song.titulo}</h3>
         <p className="truncate text-sm text-gray-400">{song.artista}</p>
       </div>
