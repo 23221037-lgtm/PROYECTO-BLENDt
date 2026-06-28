@@ -1,0 +1,23 @@
+export const songs = [
+  {
+    id: 1,
+    titulo: 'Luces de medianoche',
+    artista: 'Aurora Norte',
+    imagen: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=500&q=80',
+    audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+  },
+  {
+    id: 2,
+    titulo: 'Ritmo tropical',
+    artista: 'Sonido Amazónico',
+    imagen: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=500&q=80',
+    audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+  },
+  {
+    id: 3,
+    titulo: 'Ecos del futuro',
+    artista: 'Neón',
+    imagen: 'https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=500&q=80',
+    audio: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3',
+  },
+]
