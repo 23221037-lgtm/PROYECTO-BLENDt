@@ -1,13 +1,20 @@
+import Header from './components/Header'
+import Sidebar from './components/Sidebar'
+import Home from './pages/Home'
+
 function App() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-black text-white">
-      <div className="text-center">
-        <h1 className="text-5xl font-bold text-green-400">Blend</h1>
-        <p className="mt-4 text-gray-300">
-          Tu plataforma musical
-        </p>
+    <div className="flex min-h-screen bg-zinc-900 text-white">
+      <Sidebar />
+
+      <div className="flex min-w-0 flex-1 flex-col">
+        <Header />
+
+        <main className="flex-1 p-6 md:p-8">
+          <Home />
+        </main>
       </div>
-    </main>
+    </div>
   )
 }
 
