@@ -1,12 +1,16 @@
 import SongCard from '../components/SongCard'
-import { songs } from '../data/songs'
+import { useMusic } from '../context/MusicContext'
 
-function Home({ onSelectSong, busqueda }) {
-  const texto = busqueda.toLowerCase()
+function Home({ onSelectSong }) {
+  const { canciones, cargando, error } = useMusic()
 
-  const cancionesFiltradas = songs.filter((song) =>
-    `${song.titulo} ${song.artista}`.toLowerCase().includes(texto)
-  )
+  if (cargando) {
+    return <p className="text-gray-400">Cargando canciones...</p>
+  }
+
+  if (error) {
+    return <p className="text-red-400">{error}</p>
+  }
 
   return (
     <section>
@@ -15,21 +19,15 @@ function Home({ onSelectSong, busqueda }) {
         Descubre música seleccionada para ti.
       </p>
 
-      {cancionesFiltradas.length > 0 ? (
-        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {cancionesFiltradas.map((song) => (
-            <SongCard
-              key={song.id}
-              song={song}
-              onSelect={onSelectSong}
-            />
-          ))}
-        </div>
-      ) : (
-        <p className="mt-8 text-gray-400">
-          No se encontraron canciones.
-        </p>
-      )}
+      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {canciones.map((song) => (
+          <SongCard
+            key={song.id}
+            song={song}
+            onSelect={onSelectSong}
+          />
+        ))}
+      </div>
     </section>
   )
 }

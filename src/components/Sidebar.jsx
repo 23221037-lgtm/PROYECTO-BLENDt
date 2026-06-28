@@ -1,10 +1,15 @@
 import { Home, Library, Search } from 'lucide-react'
+import { NavLink } from 'react-router-dom'
 
 function Sidebar() {
   const menu = [
-    { nombre: 'Inicio', icono: Home },
-    { nombre: 'Buscar', icono: Search },
-    { nombre: 'Tu biblioteca', icono: Library },
+    { nombre: 'Inicio', icono: Home, ruta: '/' },
+    { nombre: 'Buscar', icono: Search, ruta: '/buscar' },
+    {
+      nombre: 'Tu biblioteca',
+      icono: Library,
+      ruta: '/biblioteca',
+    },
   ]
 
   return (
@@ -14,13 +19,22 @@ function Sidebar() {
       </h1>
 
       <nav>
-        <ul className="space-y-4">
-          {menu.map(({ nombre, icono: Icono }) => (
+        <ul className="space-y-2">
+          {menu.map(({ nombre, icono: Icono, ruta }) => (
             <li key={nombre}>
-              <button className="flex w-full items-center gap-3 text-gray-300 hover:text-white">
+              <NavLink
+                to={ruta}
+                className={({ isActive }) =>
+                  `flex items-center gap-3 rounded-md px-2 py-2 ${
+                    isActive
+                      ? 'bg-zinc-800 text-white'
+                      : 'text-gray-300 hover:text-white'
+                  }`
+                }
+              >
                 <Icono size={22} />
                 <span>{nombre}</span>
-              </button>
+              </NavLink>
             </li>
           ))}
         </ul>

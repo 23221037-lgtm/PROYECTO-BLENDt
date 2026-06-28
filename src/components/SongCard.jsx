@@ -1,7 +1,10 @@
-import { Play } from 'lucide-react'
+import { Heart, Play } from 'lucide-react'
+import { useMusic } from '../context/MusicContext'
 
 function SongCard({ song, onSelect }) {
   const { titulo, artista, imagen } = song
+  const { cambiarFavorito, esFavorito } = useMusic()
+  const favorito = esFavorito(song.id)
 
   return (
     <article className="group rounded-lg bg-zinc-800 p-4 transition hover:bg-zinc-700">
@@ -11,6 +14,18 @@ function SongCard({ song, onSelect }) {
           alt={`Portada de ${titulo}`}
           className="h-full w-full object-cover"
         />
+
+        <button
+          onClick={() => cambiarFavorito(song)}
+          className="absolute right-3 top-3 rounded-full bg-black/80 p-2"
+          title={favorito ? 'Quitar de favoritos' : 'Agregar a favoritos'}
+        >
+          <Heart
+            size={20}
+            className={favorito ? 'text-green-400' : 'text-white'}
+            fill={favorito ? 'currentColor' : 'none'}
+          />
+        </button>
 
         <button
           onClick={() => onSelect(song)}
