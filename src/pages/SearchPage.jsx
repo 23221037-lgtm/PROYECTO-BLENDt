@@ -1,12 +1,21 @@
 import SongCard from '../components/SongCard'
-import { songs } from '../data/songs'
+import { useMusic } from '../context/MusicContext'
 
 function SearchPage({ busqueda, onSelectSong }) {
+  const { canciones, cargando, error } = useMusic()
   const texto = busqueda.trim().toLowerCase()
 
-  const resultados = songs.filter((song) =>
+  const resultados = canciones.filter((song) =>
     `${song.titulo} ${song.artista}`.toLowerCase().includes(texto)
   )
+
+  if (cargando) {
+    return <p className="text-gray-400">Cargando canciones...</p>
+  }
+
+  if (error) {
+    return <p className="text-red-400">{error}</p>
+  }
 
   return (
     <section>

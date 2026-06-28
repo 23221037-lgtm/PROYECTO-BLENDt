@@ -1,18 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Navigate, Route, Routes, useNavigate } from 'react-router-dom'
 import Header from './components/Header'
+import MobileNav from './components/MobileNav'
 import Player from './components/Player'
 import Sidebar from './components/Sidebar'
-import { songs } from './data/songs'
+import { useMusic } from './context/MusicContext'
 import Home from './pages/Home'
 import LibraryPage from './pages/LibraryPage'
 import SearchPage from './pages/SearchPage'
-import MobileNav from './components/MobileNav'
 
 function App() {
-  const [selectedSong, setSelectedSong] = useState(songs[0])
+  const { canciones } = useMusic()
+  const [selectedSong, setSelectedSong] = useState(null)
   const [busqueda, setBusqueda] = useState('')
   const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!selectedSong && canciones.length > 0) {
+       // eslint-disable-next-line react-hooks/set-state-in-effect
+      setSelectedSong(canciones[0])
+    }
+  }, [canciones, selectedSong])
 
   const cambiarBusqueda = (texto) => {
     setBusqueda(texto)
@@ -52,8 +60,9 @@ function App() {
           </Routes>
         </main>
       </div>
+
       <MobileNav />
-      <Player song={selectedSong} />
+      {selectedSong && <Player song={selectedSong} />}
     </div>
   )
 }
