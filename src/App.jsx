@@ -62,7 +62,7 @@ function App() {
       </div>
 
       <MobileNav />
-      {selectedSong && <Player song={selectedSong} />}
+      {selectedSong && <Player song={selectedSong} onSelectSong={setSelectedSong} />}
     </div>
   )
 }
