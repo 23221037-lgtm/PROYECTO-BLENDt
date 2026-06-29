@@ -1,17 +1,8 @@
-import { ChevronLeft, ChevronRight, Search, User } from 'lucide-react'
+import { Search, User } from 'lucide-react'
 
 function Header({ busqueda, onCambiarBusqueda }) {
   return (
-    <header className="flex items-center gap-4 border-b border-zinc-800 bg-zinc-900 px-6 py-4">
-      <div className="hidden gap-2 sm:flex">
-        <button className="rounded-full bg-black p-2" title="Anterior">
-          <ChevronLeft size={20} />
-        </button>
-        <button className="rounded-full bg-black p-2" title="Siguiente">
-          <ChevronRight size={20} />
-        </button>
-      </div>
-
+    <header className="relative flex items-center justify-center border-b border-zinc-800 bg-zinc-900 px-6 py-4">
       <div className="relative w-full max-w-md">
         <Search
           size={19}
@@ -27,7 +18,7 @@ function Header({ busqueda, onCambiarBusqueda }) {
         />
       </div>
 
-      <button className="ml-auto flex items-center gap-2 rounded-full bg-black px-4 py-2">
+      <button className="absolute right-6 flex items-center gap-2 rounded-full bg-black px-4 py-2">
         <User size={18} />
         <span className="hidden sm:inline">Usuario</span>
       </button>

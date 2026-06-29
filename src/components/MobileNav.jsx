@@ -10,6 +10,7 @@ function MobileNav() {
 
   return (
     <nav className="fixed bottom-[70px] left-0 right-0 z-20 flex justify-around border-t border-zinc-700 bg-black py-2 md:hidden">
+
       {opciones.map(({ nombre, icono: Icono, ruta }) => (
         <NavLink
           key={nombre}
