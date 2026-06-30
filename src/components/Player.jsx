@@ -132,8 +132,8 @@ function Player({ song, onSelectSong }) {
 
   return (
     <footer className="fixed bottom-0 left-0 right-0 z-20 border-t border-zinc-700 bg-zinc-950 px-4 py-3 text-white">
-      <div className="relative flex min-h-[96px] items-center">
-        <div className="flex min-w-0 items-center gap-3 sm:absolute sm:left-4 sm:top-1/2 sm:-translate-y-1/2">
+      <div className="relative flex flex-col gap-3 min-h-[96px] items-center sm:flex-row sm:items-center">
+        <div className="flex w-full min-w-0 items-center gap-3 sm:absolute sm:left-4 sm:top-1/2 sm:-translate-y-1/2">
           <img
             src={song.imagen}
             alt={`Portada de ${song.titulo}`}
@@ -197,16 +197,18 @@ function Player({ song, onSelectSong }) {
               type="range"
               min="0"
               max={duration || 0}
+              step="0.1"
               value={currentTime}
               onChange={(event) => seek(Number(event.target.value))}
+              aria-label="Barra de progreso"
               className="flex-1 h-1 cursor-pointer appearance-none rounded-full bg-zinc-800 accent-green-400"
             />
             <span>{formatTime(duration)}</span>
           </div>
         </div>
 
-        <div className="hidden sm:flex sm:items-center sm:gap-2 sm:absolute sm:right-4 sm:top-1/2 sm:-translate-y-1/2">
-          <Volume2 size={16} className="text-gray-400" />
+        <div className="flex items-center gap-2 sm:absolute sm:right-4 sm:top-1/2 sm:-translate-y-1/2">
+          <Volume2 size={18} className="text-gray-300" />
           <input
             type="range"
             min="0"
@@ -214,8 +216,10 @@ function Player({ song, onSelectSong }) {
             step="0.01"
             value={volume}
             onChange={(event) => setVolume(Number(event.target.value))}
-            className="h-1 w-24 cursor-pointer appearance-none rounded-full bg-zinc-800 accent-green-400"
+            aria-label="Control de volumen"
+            className="h-1 w-28 cursor-pointer appearance-none rounded-full bg-zinc-800 accent-green-400"
           />
+          <span className="text-xs text-gray-400">{Math.round(volume * 100)}%</span>
         </div>
       </div>
 
