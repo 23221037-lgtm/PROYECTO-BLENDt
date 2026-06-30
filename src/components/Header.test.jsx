@@ -14,7 +14,7 @@ describe('Header', () => {
 
     expect(
       screen.getByRole('searchbox', {
-        name: 'Buscar canciones o artistas',
+        name: 'Buscar por título, artista, género o álbum',
       }),
     ).toBeInTheDocument()
 
