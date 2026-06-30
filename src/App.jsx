@@ -28,7 +28,7 @@ function App() {
   }
 
   return (
-    <div className="flex min-h-screen bg-zinc-900 pb-40 text-white md:pb-24">
+    <div className="flex min-h-screen bg-zinc-900 pb-[180px] text-white md:pb-24">
       <Sidebar />
 
       <div className="flex min-w-0 flex-1 flex-col">

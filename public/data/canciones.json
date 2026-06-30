@@ -1,8 +1,10 @@
-[
+﻿[
   {
     "id": 1,
     "titulo": "Luces de medianoche",
     "artista": "Aurora Norte",
+    "genero": "Synthwave",
+    "album": "Sombras Nocturnas",
     "imagen": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=500&q=80",
     "audio": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
   },
@@ -10,6 +12,8 @@
     "id": 2,
     "titulo": "Ritmo tropical",
     "artista": "Sonido Amazonico",
+    "genero": "Tropical",
+    "album": "Sabores del Río",
     "imagen": "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=500&q=80",
     "audio": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
   },
@@ -17,6 +21,8 @@
     "id": 3,
     "titulo": "Ecos del futuro",
     "artista": "Neon",
+    "genero": "Electrónica",
+    "album": "Visiones Digitales",
     "imagen": "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=500&q=80",
     "audio": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
   },
@@ -24,6 +30,8 @@
     "id": 4,
     "titulo": "Noches de neón",
     "artista": "Ciudad Brillante",
+    "genero": "Pop",
+    "album": "Luces y Sombras",
     "imagen": "https://images.unsplash.com/photo-1485579149621-3123dd979885?auto=format&fit=crop&w=500&q=80",
     "audio": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"
   },
@@ -31,6 +39,8 @@
     "id": 5,
     "titulo": "Brisa lunar",
     "artista": "Luna Serena",
+    "genero": "Ambient",
+    "album": "Cantos de Luna",
     "imagen": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=500&q=80",
     "audio": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"
   },
@@ -38,6 +48,8 @@
     "id": 6,
     "titulo": "Caminos de arena",
     "artista": "Olas del Desierto",
+    "genero": "World",
+    "album": "Senderos del Desierto",
     "imagen": "https://images.unsplash.com/photo-1515734674582-29010bb37906?auto=format&fit=crop&w=500&q=80",
     "audio": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"
   },
@@ -45,6 +57,8 @@
     "id": 7,
     "titulo": "Horizonte eléctrico",
     "artista": "Circuito Azul",
+    "genero": "Electro",
+    "album": "Circuito Azul",
     "imagen": "https://images.unsplash.com/photo-1499346030926-9a72daac6c63?auto=format&fit=crop&w=500&q=80",
     "audio": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"
   },
@@ -52,6 +66,8 @@
     "id": 8,
     "titulo": "Lluvia de plata",
     "artista": "Niebla Sonora",
+    "genero": "Indie",
+    "album": "Niebla Nocturna",
     "imagen": "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=500&q=80",
     "audio": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"
   },
@@ -59,6 +75,8 @@
     "id": 9,
     "titulo": "Viaje espacial",
     "artista": "Cosmic Drift",
+    "genero": "Space Rock",
+    "album": "Órbita",
     "imagen": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=500&q=80",
     "audio": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3"
   },
@@ -66,6 +84,8 @@
     "id": 10,
     "titulo": "Pulso urbano",
     "artista": "Metro Ritmo",
+    "genero": "Urban",
+    "album": "Metro Ritmo",
     "imagen": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=500&q=80",
     "audio": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3"
   }

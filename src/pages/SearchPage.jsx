@@ -1,13 +1,22 @@
-import SongCard from '../components/SongCard'
+﻿import SongCard from '../components/SongCard'
 import { useMusic } from '../context/MusicContext'
 
 function SearchPage({ busqueda, onSelectSong }) {
   const { canciones, cargando, error } = useMusic()
-  const texto = busqueda.trim().toLowerCase()
+  const texto = busqueda.trim()
 
-  const resultados = canciones.filter((song) =>
-    `${song.titulo} ${song.artista}`.toLowerCase().includes(texto)
-  )
+  const normalizar = (valor = '') =>
+    valor.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase()
+
+  const textoNormalizado = normalizar(texto)
+
+  const resultados = canciones.filter((song) => {
+    const valores = [song.titulo, song.artista, song.genero, song.album]
+      .filter(Boolean)
+      .join(' ')
+
+    return normalizar(valores).includes(textoNormalizado)
+  })
 
   if (cargando) {
     return <p className="text-gray-400">Cargando canciones...</p>
@@ -23,7 +32,7 @@ function SearchPage({ busqueda, onSelectSong }) {
 
       {!texto ? (
         <p className="mt-4 text-gray-400">
-          Escribe el nombre de una canción o artista.
+          Escribe título, artista, género o álbum.
         </p>
       ) : resultados.length > 0 ? (
         <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
