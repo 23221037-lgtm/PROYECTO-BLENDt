@@ -1,4 +1,4 @@
-import { Search, User } from 'lucide-react'
+﻿import { Search, User } from 'lucide-react'
 
 function Header({ busqueda, onCambiarBusqueda }) {
   return (
@@ -12,8 +12,8 @@ function Header({ busqueda, onCambiarBusqueda }) {
           type="search"
           value={busqueda}
           onChange={(event) => onCambiarBusqueda(event.target.value)}
-          placeholder="Buscar canciones o artistas"
-          aria-label="Buscar canciones o artistas"
+          placeholder="Buscar por título, artista, género o álbum"
+          aria-label="Buscar por título, artista, género o álbum"
           className="w-full rounded-full bg-white py-2 pl-10 pr-4 text-black outline-none focus:ring-2 focus:ring-green-400"
         />
       </div>
